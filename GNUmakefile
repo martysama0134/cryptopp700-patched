@@ -1,3 +1,5 @@
+CXX = g++10
+CC = gcc10
 ###########################################################
 #####        System Attributes and Programs           #####
 ###########################################################
@@ -150,7 +152,7 @@ endif
 
 # Fix CXX on Cygwin 1.1.4
 ifeq ($(CXX),gcc)
-CXX := g++
+CXX = g++10
 endif
 
 # We honor ARFLAGS, but the "v" option used by default causes a noisy make
@@ -898,6 +900,7 @@ libcryptopp.a: $(LIBOBJS)
 ifeq ($(IS_SUN),0)
 	$(RANLIB) $@
 endif
+	mv $@ ../lib/
 
 ifeq ($(HAS_SOLIB_VERSION),1)
 .PHONY: libcryptopp.so
