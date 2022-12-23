@@ -1,5 +1,5 @@
-CXX = g++10
-CC = gcc10
+CXX = g++12
+CC = gcc12
 ###########################################################
 #####        System Attributes and Programs           #####
 ###########################################################
@@ -148,11 +148,6 @@ BINDIR := $(PREFIX)/bin
 endif
 ifeq ($(INCLUDEDIR),)
 INCLUDEDIR := $(PREFIX)/include
-endif
-
-# Fix CXX on Cygwin 1.1.4
-ifeq ($(CXX),gcc)
-CXX = g++10
 endif
 
 # We honor ARFLAGS, but the "v" option used by default causes a noisy make
